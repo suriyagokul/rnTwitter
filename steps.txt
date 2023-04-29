@@ -1,0 +1,13 @@
+npm install -g expo-cli
+
+expo init project name 
+
+        or
+
+npx create-expo-app@latest ProjectName --template
+
+cd Twitter
+
+npm install 
+
+npx expo start
