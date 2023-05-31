@@ -11,3 +11,46 @@ cd Twitter
 npm install 
 
 npx expo start
+
+To create a screen simply create a file in the app directory..
+
+If we create a file in the tabs directory then it will create a new tab.
+
+If we create a directory with brackets () -- we need not to specify it in the url..
+
+        Ex- (tweet) directory has filename abc.tsx 
+
+            <Link href={"/abc"}></Link>
+
+        Ex2- tweet directory has filename abc.tsx we have to specify it in the url.
+
+              <Link href={"/tweet/abc"}></Link>
+
+If we want to pass an id in the url to another page - 
+
+         <Link href={"/tweet/t0"}></Link> 
+         
+        and to access this t0 id -- we have to put square bracketson the filename
+
+        Ex- tweet directory has filename [id].tsx
+
+How to access this t0 id :: 
+
+        import { useSearchParams } from "expo-router";
+
+        const {id} =  useSearchParams()
+
+This way of passing an id in the url to another page and accessing it is called Deep Linking.
+
+npx uri-scheme open exp://192.168.0.110:19000/--/tweet/t0 --ios
+
+        It will automatically open twitter and opens that page t0 simulates like selenium.
+
+After installing reanimated and gesture handler add this in babel.config.js
+        
+        "react-native-reanimated/plugin",
+
+        Then restart the server by using 
+        
+                expo start -c                       which deletes cache
+
